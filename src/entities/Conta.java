@@ -39,7 +39,8 @@ public abstract class Conta {
 		this.saldo = saldo;
 	}
 	
-	public void rendimento(Double saldo) {
+	public double rendimento(Double saldo) {
+		return getSaldo();
 	}
 	
 }

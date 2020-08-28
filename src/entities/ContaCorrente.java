@@ -2,7 +2,7 @@ package entities;
 
 public class ContaCorrente extends Conta {
 
-	private Double taxaJuro = 0.03;
+	private static final Double taxaJuro = 0.03;
 	
 	public ContaCorrente() {
 		super();
@@ -15,23 +15,17 @@ public class ContaCorrente extends Conta {
 	public Double getTaxaJuro() {
 		return taxaJuro;
 	}
-
-	public void setTaxaJuro(Double taxaJuro) {
-		this.taxaJuro = taxaJuro;
-	}
 	
 	@Override
-	public void rendimento(Double saldo) {
-		saldo += saldo * taxaJuro;
+	public double rendimento(Double saldo) {
+		return saldo += saldo * taxaJuro;
 	}
 
 	@Override
 	public String toString() {
-		return "Conta Corrente: "
-				+ "Número: " + getNumero()
-				+ "Titular: " + getTitular()
-				+ "Saldo: " + getSaldo();
+		return  "Número: " + getNumero() + ", "
+				+ "Titular: " + getTitular() + ", "
+				+ "Saldo: " + String.format("%.2f", getSaldo()) + ", "
+				+ "Rendimento: " + String.format("%.2f", rendimento(saldo));
 	}
-	
-	
 }

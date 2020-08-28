@@ -16,7 +16,8 @@ public class Program {
 		System.out.print("Número da conta: ");
 		int numero = sc.nextInt();
 		
-		System.out.print("Titual: ");
+		sc.nextLine();
+		System.out.print("Titutar: ");
 		String titular = sc.nextLine();
 		
 		System.out.print("Saldo: ");
@@ -24,11 +25,15 @@ public class Program {
 		
 		ContaCorrente contaCorrente = new ContaCorrente(numero, titular, saldo);
 		
-		System.out.println("CONTA CORRENTE");
+		System.out.println(contaCorrente);
+		
+		System.out.println("--------------------------------------------------------------");
+		System.out.println("CONTA POUPANÇA");
 		System.out.print("Número da conta: ");
 		int numeroPoupanca = sc.nextInt();
 		
-		System.out.print("Titual: ");
+		sc.nextLine();
+		System.out.print("Titular: ");
 		String titularPoupanca = sc.nextLine();
 		
 		System.out.print("Saldo: ");
@@ -36,6 +41,7 @@ public class Program {
 		
 		ContaPoupanca contaPoupanca = new ContaPoupanca(numeroPoupanca, titularPoupanca, saldoPoupanca);
 		
+		System.out.println(contaPoupanca);
 		
 		sc.close();
 	}
